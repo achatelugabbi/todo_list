@@ -1,0 +1,28 @@
+<html>
+<head>
+  <title>Simple and RESTful Authentication</title>
+</head>
+
+<body>
+  <%= link_to "Home", root_url %> -
+  <% if @user %>
+    <%= link_to "Edit Account", edit_person_path('account') %> -
+    <%= link_to "Logout", @application_session, :method => :delete %>
+  <% else %>
+    <%= link_to "Login", new_session_path %> -
+    <%= link_to "Register", new_person_path %>
+  <% end %>
+  
+  <%= "- Message: #{flash[:notice]}" if flash[:notice] %>
+  
+  <hr />
+
+  <h3>
+  <% if @user %>
+    <%= "User: #{@user.name}" %><br />
+  <% end %>
+  </h3>
+  
+  <%= yield %>
+</body>
+</html>

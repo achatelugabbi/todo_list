@@ -1,0 +1,31 @@
+<h1> Tasks </h1>
+<% form_for @task do |f| -%>
+	<p> 
+		<%= f.label 'Task Name' %>:
+		<%= f.text_field :name %>
+		<%= f.label 'Priority' %>:
+		<%= f.text_field :priority %>
+		<%= f.submit 'Create' %>
+	</p>
+<% end %>
+
+<table border = 1>
+   <tr>
+	<th> Priority </th> <th> Task </th> <th> Status </th> <th> Delete </th>
+   </tr>
+
+  <% @tasks.each do |task| %>
+   <tr> 
+	<td> <%= task.priority %> </td>
+	<td> <%= task.name %> </td>
+	<td> <%= if task.finished 
+			link_to 'UNDO COMPLETED', :controller => "tasks", :action =>"undo_completed", :id => task.id
+		 else
+			link_to 'COMPLETED', :controller => "tasks", :action =>"completed", :id => task.id
+		 end 
+	      %></td>
+	<td> <%= link_to 'DELETE', task, :confirm => "Are you sure?", :method => :delete %> </td>
+   </tr>
+  <% end %>
+</table>
+
