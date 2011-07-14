@@ -1,7 +1,10 @@
 class TasksController < ApplicationController
+  before_filter :ensure_login
+  before_filter :get_person
+
   def index
      new
-     @tasks = Task.all
+     @tasks = @person.tasks
   end
 
   def new
@@ -9,34 +12,41 @@ class TasksController < ApplicationController
   end
 
   def create
-	@task = Task.new(params[:task])
+	@task = @person.tasks.build(params[:task])
 	if @task.save
 		flash[:notice] = 'Task successfully created'
 		redirect_to :action => "index"
 	else
 		flash[:notice] = 'Failed to Create the Task'
-		@tasks = Task.all
+		@tasks = @person.tasks
 		render :action => "index"
 	end
   end
 
   def completed
-	@task = Task.find(params[:id])
+	@task = @person.tasks.find(params[:id])
 	new = {:finished => true, :priority => 10000}
-	@task.update_attributes{new}
+	@task.update_attributes(new)
 	redirect_to :action => "index"
   end
 
   def undo_completed
-	@task = Task.find(params[:id])
+	@task = @person.tasks.find(params[:id])
 	new = {:finished => false, :priority => 0}
-	@task.update_atrributes{new}
+	@task.update_attributes(new)
 	redirect_to :action => "index"
   end
 
   def destroy 
-	@task = Task.find(params[:id])
+	@task = @person.tasks.find(params[:id])
 	@task.destroy
 	redirect_to(tasks_url)
   end
+
+  private
+
+  def get_person
+    @person = Person.find(@user)
+  end
+
 end

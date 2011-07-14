@@ -2189,3 +2189,2010 @@ ArgumentError (wrong number of arguments (0 for 1)):
 Rendered rescues/_trace (138.6ms)
 Rendered rescues/_request_and_response (2.4ms)
 Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (52.9ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (110.4ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateSessions (1)
+  [4;35;1mSQL (24.5ms)[0m   [0mCREATE TABLE `sessions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `person_id` int(11), `ip_address` varchar(255), `path` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (6.6ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('1')[0m
+Migrating to CreatePeople (2)
+  [4;35;1mSQL (21.2ms)[0m   [0mCREATE TABLE `people` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `salt` varchar(255), `encrypted_password` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (10.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('2')[0m
+Migrating to CreateTasks (3)
+  [4;35;1mSQL (47.1ms)[0m   [0mCREATE TABLE `tiasks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `person_id` int(11), `name` varchar(255), `finished` tinyint(1), `priority` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (10.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('3')[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mSHOW FIELDS FROM `people`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mdescribe `people`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW KEYS FROM `people`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW FIELDS FROM `sessions`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mdescribe `sessions`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW KEYS FROM `sessions`[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSHOW FIELDS FROM `tiasks`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mdescribe `tiasks`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW KEYS FROM `tiasks`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (11.8ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (69.2ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateSessions (1)
+  [4;35;1mSQL (23.5ms)[0m   [0mCREATE TABLE `sessions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `person_id` int(11), `ip_address` varchar(255), `path` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (4.7ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('1')[0m
+Migrating to CreatePeople (2)
+  [4;35;1mSQL (30.1ms)[0m   [0mCREATE TABLE `people` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `salt` varchar(255), `encrypted_password` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (190.5ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('2')[0m
+Migrating to CreateTasks (3)
+  [4;35;1mSQL (27.9ms)[0m   [0mCREATE TABLE `tasks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `person_id` int(11), `name` varchar(255), `finished` tinyint(1), `priority` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (2.7ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('3')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (4.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSHOW FIELDS FROM `people`[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mdescribe `people`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW KEYS FROM `people`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW FIELDS FROM `sessions`[0m
+  [4;36;1mSQL (3.2ms)[0m   [0;1mdescribe `sessions`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW KEYS FROM `sessions`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW FIELDS FROM `tasks`[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mdescribe `tasks`[0m
+  [4;36;1mSQL (2.7ms)[0m   [0;1mSHOW KEYS FROM `tasks`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2011-07-13 16:52:52) [GET]
+  [4;36;1mTask Columns (3.7ms)[0m   [0;1mSHOW FIELDS FROM `tasks`[0m
+  [4;35;1mTask Load (0.6ms)[0m   [0mSELECT * FROM `tasks` [0m
+Rendering template within layouts/application
+Rendering tasks/index
+Completed in 73ms (View: 44, DB: 5) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2011-07-13 16:58:58) [GET]
+
+NoMethodError (undefined method `login_required' for #<TasksController:0x7f8e199390c8>):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (41.0ms)
+Rendered rescues/_request_and_response (1.8ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2011-07-13 17:02:58) [GET]
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as [:ensure_login] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2011-07-13 17:02:58) [GET]
+  [4;36;1mSession Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 30ms (View: 17, DB: 2) | 200 OK [http://localhost/sessions/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2011-07-13 17:03:04) [POST]
+  Parameters: {"commit"=>"login", "session"=>{"name"=>"ra", "password"=>""}, "authenticity_token"=>"Y2htQBNeB1iuW0oVb/OcHj3qantzRNxBSQcJRG3/c9A="}
+  [4;35;1mSession Columns (11.5ms)[0m   [0mSHOW FIELDS FROM `sessions`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPerson Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `people`[0m
+  [4;36;1mPerson Load (0.7ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`name` = 'ra') LIMIT 1[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 82ms (View: 3, DB: 14) | 200 OK [http://localhost/sessions]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2011-07-13 17:03:12) [POST]
+  Parameters: {"commit"=>"login", "session"=>{"name"=>"raxramni", "password"=>"brutaldeath"}, "authenticity_token"=>"Y2htQBNeB1iuW0oVb/OcHj3qantzRNxBSQcJRG3/c9A="}
+  [4;36;1mSession Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPerson Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `people`[0m
+  [4;35;1mPerson Load (0.5ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`name` = 'raxramni') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mROLLBACK[0m
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 102ms (View: 4, DB: 4) | 200 OK [http://localhost/sessions]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PeopleController#new (for 127.0.0.1 at 2011-07-13 17:03:14) [GET]
+  [4;35;1mPerson Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `people`[0m
+Rendering template within layouts/application
+Rendering people/new
+Rendered people/_form (20.2ms)
+Completed in 58ms (View: 44, DB: 2) | 200 OK [http://localhost/people/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PeopleController#create (for 127.0.0.1 at 2011-07-13 17:03:21) [POST]
+  Parameters: {"person"=>{"name"=>"raxramni", "password_confirmation"=>"brutaldeath", "password"=>"brutaldeath"}, "commit"=>"Submit", "authenticity_token"=>"Y2htQBNeB1iuW0oVb/OcHj3qantzRNxBSQcJRG3/c9A="}
+  [4;36;1mPerson Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `people`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mPerson Exists (0.4ms)[0m   [0;1mSELECT `people`.id FROM `people` WHERE (`people`.`name` = BINARY 'raxramni') LIMIT 1[0m
+  [4;35;1mPerson Create (0.4ms)[0m   [0mINSERT INTO `people` (`name`, `salt`, `encrypted_password`, `created_at`, `updated_at`) VALUES('raxramni', 'YX0lEiazOIRE', '42aacc8aaf4640fbd9cbb5145849984e7e376d6d4f3ba0c9a6e57683acbbb3fd', '2011-07-14 00:03:21', '2011-07-14 00:03:21')[0m
+  [4;36;1mSQL (11.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSession Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `sessions`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSession Create (0.4ms)[0m   [0mINSERT INTO `sessions` (`created_at`, `updated_at`, `person_id`, `path`, `ip_address`) VALUES('2011-07-14 00:03:21', '2011-07-14 00:03:21', 1, NULL, NULL)[0m
+  [4;36;1mSQL (9.4ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed in 65ms (DB: 25) | 302 Found [http://localhost/people]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2011-07-13 17:03:21) [GET]
+  [4;35;1mSession Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `sessions`[0m
+  [4;36;1mSession Load (0.5ms)[0m   [0;1mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 1) LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mSession Update (0.8ms)[0m   [0;1mUPDATE `sessions` SET `updated_at` = '2011-07-14 00:03:21', `ip_address` = '127.0.0.1', `path` = '/' WHERE `id` = 1[0m
+  [4;35;1mSQL (12.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mPerson Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `people`[0m
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.person):
+  app/controllers/tasks_controller.rb:49:in `get_user'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (121.3ms)
+Rendered rescues/_request_and_response (1.9ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2011-07-13 17:07:28) [GET]
+  [4;36;1mSession Columns (3.3ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSession Load (0.8ms)[0m   [0mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 1) LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCOMMIT[0m
+  [4;36;1mPerson Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `people`[0m
+  [4;35;1mPerson Load (0.2ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Person without an ID):
+  app/controllers/tasks_controller.rb:49:in `get_user'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (39.7ms)
+Rendered rescues/_request_and_response (1.8ms)
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2011-07-13 17:08:22) [GET]
+  [4;36;1mSession Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSession Load (0.2ms)[0m   [0mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 1) LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCOMMIT[0m
+  [4;36;1mPerson Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `people`[0m
+  [4;35;1mPerson Load (0.1ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Person without an ID):
+  app/controllers/tasks_controller.rb:49:in `get_user'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (44.4ms)
+Rendered rescues/_request_and_response (1.6ms)
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2011-07-13 17:08:25) [GET]
+  [4;36;1mSession Columns (3.7ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSession Load (0.3ms)[0m   [0mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 1) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mPerson Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `people`[0m
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Person without an ID):
+  app/controllers/tasks_controller.rb:49:in `get_user'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (47.4ms)
+Rendered rescues/_request_and_response (0.7ms)
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2011-07-13 17:08:26) [GET]
+  [4;36;1mSession Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSession Load (0.4ms)[0m   [0mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 1) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mPerson Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `people`[0m
+  [4;35;1mPerson Load (0.1ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Person without an ID):
+  app/controllers/tasks_controller.rb:49:in `get_user'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (42.3ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2011-07-13 17:19:56) [GET]
+  [4;36;1mSession Columns (11.2ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSession Load (0.5ms)[0m   [0mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 1) LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCOMMIT[0m
+  [4;36;1mPerson Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `people`[0m
+  [4;35;1mPerson Load (0.1ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+
+NameError (uninitialized constant TasksController::People):
+  app/controllers/tasks_controller.rb:49:in `get_user'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (40.4ms)
+Rendered rescues/_request_and_response (3.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2011-07-13 17:21:39) [GET]
+  [4;36;1mSession Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSession Load (0.3ms)[0m   [0mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 1) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCOMMIT[0m
+  [4;36;1mPerson Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `people`[0m
+  [4;35;1mPerson Load (0.7ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Person without an ID):
+  app/controllers/tasks_controller.rb:49:in `get_user'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (48.4ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2011-07-13 17:22:58) [GET]
+  [4;36;1mSession Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSession Load (0.3ms)[0m   [0mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 1) LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCOMMIT[0m
+  [4;36;1mPerson Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `people`[0m
+  [4;35;1mPerson Load (0.1ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Person without an ID):
+  app/controllers/tasks_controller.rb:50:in `get_user'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (39.0ms)
+Rendered rescues/_request_and_response (1.8ms)
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2011-07-13 17:23:24) [GET]
+  [4;36;1mSession Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSession Load (0.2ms)[0m   [0mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 1) LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mPerson Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `people`[0m
+  [4;35;1mPerson Load (0.2ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Person without an ID):
+  app/controllers/tasks_controller.rb:50:in `get_user'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (75.6ms)
+Rendered rescues/_request_and_response (1.7ms)
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2011-07-13 17:25:33) [GET]
+  [4;36;1mSession Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSession Load (0.2ms)[0m   [0mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 1) LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCOMMIT[0m
+  [4;36;1mPerson Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `people`[0m
+  [4;35;1mPerson Load (0.1ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;35;1mTask Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+  [4;36;1mTask Load (0.1ms)[0m   [0;1mSELECT * FROM `tasks` [0m
+Rendering template within layouts/application
+Rendering tasks/index
+Completed in 77ms (View: 15, DB: 5) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2011-07-13 17:25:44) [DELETE]
+  Parameters: {"authenticity_token"=>"Y2htQBNeB1iuW0oVb/OcHj3qantzRNxBSQcJRG3/c9A=", "id"=>"1"}
+  [4;35;1mSession Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `sessions`[0m
+  [4;36;1mSession Load (0.2ms)[0m   [0;1mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 1) LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSession Update (0.8ms)[0m   [0;1mUPDATE `sessions` SET `updated_at` = '2011-07-14 00:25:44', `path` = '/sessions/1' WHERE `id` = 1[0m
+  [4;35;1mSQL (14.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mPerson Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `people`[0m
+  [4;35;1mPerson Load (0.1ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;36;1mSession Load (0.4ms)[0m   [0;1mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSession Destroy (0.4ms)[0m   [0;1mDELETE FROM `sessions` WHERE `id` = 1[0m
+  [4;35;1mSQL (4.6ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed in 46ms (DB: 24) | 302 Found [http://localhost/sessions/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2011-07-13 17:25:44) [GET]
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as [:ensure_login] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2011-07-13 17:25:44) [GET]
+  [4;36;1mSession Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 18ms (View: 10, DB: 1) | 200 OK [http://localhost/sessions/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2011-07-13 17:25:49) [GET]
+  [4;35;1mSession Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `sessions`[0m
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 14ms (View: 4, DB: 1) | 200 OK [http://localhost/sessions/new]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2011-07-13 17:25:55) [POST]
+  Parameters: {"commit"=>"login", "session"=>{"name"=>"ra", "password"=>""}, "authenticity_token"=>"Y2htQBNeB1iuW0oVb/OcHj3qantzRNxBSQcJRG3/c9A="}
+  [4;36;1mSession Columns (2.9ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mPerson Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `people`[0m
+  [4;35;1mPerson Load (1.0ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`name` = 'ra') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mROLLBACK[0m
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 38ms (View: 3, DB: 6) | 200 OK [http://localhost/sessions]
+  [4;35;1mSQL (0.8ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2011-07-13 17:26:01) [POST]
+  Parameters: {"commit"=>"login", "session"=>{"name"=>"raxramni", "password"=>"brutaldeath"}, "authenticity_token"=>"Y2htQBNeB1iuW0oVb/OcHj3qantzRNxBSQcJRG3/c9A="}
+  [4;35;1mSession Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `sessions`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPerson Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `people`[0m
+  [4;36;1mPerson Load (0.5ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`name` = 'raxramni') LIMIT 1[0m
+  [4;35;1mSession Create (1.1ms)[0m   [0mINSERT INTO `sessions` (`created_at`, `updated_at`, `person_id`, `path`, `ip_address`) VALUES('2011-07-14 00:26:01', '2011-07-14 00:26:01', 1, NULL, NULL)[0m
+  [4;36;1mSQL (9.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mPerson Load (0.1ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+Redirected to http://localhost:3000/
+Completed in 38ms (DB: 14) | 302 Found [http://localhost/sessions]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2011-07-13 17:26:01) [GET]
+  [4;36;1mSession Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSession Load (0.5ms)[0m   [0mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 2) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSession Update (0.5ms)[0m   [0mUPDATE `sessions` SET `updated_at` = '2011-07-14 00:26:01', `ip_address` = '127.0.0.1', `path` = '/' WHERE `id` = 2[0m
+  [4;36;1mSQL (15.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mPerson Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `people`[0m
+  [4;36;1mPerson Load (0.1ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;36;1mTask Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `tasks`[0m
+  [4;35;1mTask Load (0.2ms)[0m   [0mSELECT * FROM `tasks` [0m
+Rendering template within layouts/application
+Rendering tasks/index
+Completed in 132ms (View: 6, DB: 20) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2011-07-13 17:32:30) [GET]
+  [4;36;1mSession Columns (3.3ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSession Load (0.7ms)[0m   [0mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 2) LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mPerson Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `people`[0m
+  [4;35;1mPerson Load (0.2ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering tasks/index
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #2 of app/views/tasks/index.rhtml:
+1: <h1> Tasks </h1>
+2: <% form_for @task do |f| -%>
+3: 	<p> 
+4: 		<%= f.label 'Task Name' %>:
+5: 		<%= f.text_field :name %>
+
+    app/views/tasks/index.rhtml:2:in `_run_rhtml_app47views47tasks47index46rhtml'
+    app/controllers/tasks_controller.rb:8:in `index'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (64.5ms)
+Rendered rescues/_request_and_response (2.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2011-07-13 17:36:29) [GET]
+  [4;36;1mSession Columns (5.8ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSession Load (0.3ms)[0m   [0mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 2) LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mPerson Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `people`[0m
+  [4;35;1mPerson Load (0.1ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering tasks/index
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #2 of app/views/tasks/index.rhtml:
+1: <h1> Tasks </h1>
+2: <% form_for @task do |f| -%>
+3: 	<p> 
+4: 		<%= f.label 'Task Name' %>:
+5: 		<%= f.text_field :name %>
+
+    app/views/tasks/index.rhtml:2:in `_run_rhtml_app47views47tasks47index46rhtml'
+    app/controllers/tasks_controller.rb:7:in `index'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (159.6ms)
+Rendered rescues/_request_and_response (1.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.6ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-07-13 17:39:30) [GET]
+
+SyntaxError (/root/todo_list/todolist/app/controllers/tasks_controller.rb:52: syntax error, unexpected kEND, expecting $end):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (33.3ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.8ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2011-07-13 17:39:38) [GET]
+  [4;35;1mSession Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `sessions`[0m
+  [4;36;1mSession Load (0.2ms)[0m   [0;1mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 2) LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mPerson Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `people`[0m
+  [4;36;1mPerson Load (0.1ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering tasks/index
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #2 of app/views/tasks/index.rhtml:
+1: <h1> Tasks </h1>
+2: <% form_for @task do |f| -%>
+3: 	<p> 
+4: 		<%= f.label 'Task Name' %>:
+5: 		<%= f.text_field :name %>
+
+    app/views/tasks/index.rhtml:2:in `_run_rhtml_app47views47tasks47index46rhtml'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (130.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2011-07-13 17:40:08) [GET]
+  [4;36;1mSession Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSession Load (0.2ms)[0m   [0mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 2) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCOMMIT[0m
+  [4;36;1mPerson Columns (3.5ms)[0m   [0;1mSHOW FIELDS FROM `people`[0m
+  [4;35;1mPerson Load (0.1ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering tasks/index
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #2 of app/views/tasks/index.rhtml:
+1: <h1> Tasks </h1>
+2: <% form_for @task do |f| -%>
+3: 	<p> 
+4: 		<%= f.label 'Task Name' %>:
+5: 		<%= f.text_field :name %>
+
+    app/views/tasks/index.rhtml:2:in `_run_rhtml_app47views47tasks47index46rhtml'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (48.0ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2011-07-13 17:43:08) [GET]
+  [4;36;1mSession Columns (3.4ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSession Load (0.3ms)[0m   [0mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 2) LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mPerson Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `people`[0m
+  [4;35;1mPerson Load (0.1ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;35;1mTask Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;36;1mTask Load (0.6ms)[0m   [0;1mSELECT * FROM `tasks` WHERE (`tasks`.person_id = 1) [0m
+Completed in 79ms (View: 16, DB: 8) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2011-07-13 20:01:05) [GET]
+  [4;36;1mSession Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSession Load (0.3ms)[0m   [0mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 2) LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCOMMIT[0m
+  [4;36;1mPerson Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `people`[0m
+  [4;35;1mPerson Load (0.1ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;35;1mTask Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;36;1mTask Load (0.2ms)[0m   [0;1mSELECT * FROM `tasks` WHERE (`tasks`.person_id = 1) [0m
+Completed in 82ms (View: 17, DB: 6) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2011-07-13 20:01:07) [GET]
+  [4;35;1mSession Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `sessions`[0m
+  [4;36;1mSession Load (0.2ms)[0m   [0;1mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 2) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mPerson Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `people`[0m
+  [4;36;1mPerson Load (0.1ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;36;1mTask Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `tasks`[0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;35;1mTask Load (0.2ms)[0m   [0mSELECT * FROM `tasks` WHERE (`tasks`.person_id = 1) [0m
+Completed in 41ms (View: 5, DB: 4) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2011-07-13 20:01:09) [GET]
+  [4;36;1mSession Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSession Load (0.2ms)[0m   [0mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 2) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mPerson Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `people`[0m
+  [4;35;1mPerson Load (0.2ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;35;1mTask Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;36;1mTask Load (0.3ms)[0m   [0;1mSELECT * FROM `tasks` WHERE (`tasks`.person_id = 1) [0m
+Completed in 114ms (View: 6, DB: 5) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2011-07-13 20:01:12) [DELETE]
+  Parameters: {"authenticity_token"=>"Y2htQBNeB1iuW0oVb/OcHj3qantzRNxBSQcJRG3/c9A=", "id"=>"2"}
+  [4;35;1mSession Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `sessions`[0m
+  [4;36;1mSession Load (0.2ms)[0m   [0;1mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 2) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSession Update (1.1ms)[0m   [0;1mUPDATE `sessions` SET `updated_at` = '2011-07-14 03:01:12', `path` = '/sessions/2' WHERE `id` = 2[0m
+  [4;35;1mSQL (23.7ms)[0m   [0mCOMMIT[0m
+  [4;36;1mPerson Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `people`[0m
+  [4;35;1mPerson Load (0.1ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;36;1mSession Load (0.5ms)[0m   [0;1mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 2) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSession Destroy (0.3ms)[0m   [0;1mDELETE FROM `sessions` WHERE `id` = 2[0m
+  [4;35;1mSQL (5.8ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed in 55ms (DB: 34) | 302 Found [http://localhost/sessions/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2011-07-13 20:01:12) [GET]
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as [:ensure_login] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2011-07-13 20:01:12) [GET]
+  [4;36;1mSession Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 21ms (View: 12, DB: 1) | 200 OK [http://localhost/sessions/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2011-07-13 20:01:16) [POST]
+  Parameters: {"commit"=>"login", "session"=>{"name"=>"raxramni", "password"=>"brutaldeath"}, "authenticity_token"=>"Y2htQBNeB1iuW0oVb/OcHj3qantzRNxBSQcJRG3/c9A="}
+  [4;35;1mSession Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `sessions`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPerson Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `people`[0m
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`name` = 'raxramni') LIMIT 1[0m
+  [4;35;1mSession Create (0.5ms)[0m   [0mINSERT INTO `sessions` (`created_at`, `updated_at`, `person_id`, `path`, `ip_address`) VALUES('2011-07-14 03:01:16', '2011-07-14 03:01:16', 1, NULL, NULL)[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mPerson Load (0.2ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+Redirected to http://localhost:3000/
+Completed in 32ms (DB: 6) | 302 Found [http://localhost/sessions]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2011-07-13 20:01:16) [GET]
+  [4;36;1mSession Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSession Load (0.6ms)[0m   [0mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 3) LIMIT 1[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSession Update (0.4ms)[0m   [0mUPDATE `sessions` SET `updated_at` = '2011-07-14 03:01:16', `ip_address` = '127.0.0.1', `path` = '/' WHERE `id` = 3[0m
+  [4;36;1mSQL (61.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mPerson Columns (9.2ms)[0m   [0mSHOW FIELDS FROM `people`[0m
+  [4;36;1mPerson Load (3.5ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;36;1mTask Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `tasks`[0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;35;1mTask Load (0.3ms)[0m   [0mSELECT * FROM `tasks` WHERE (`tasks`.person_id = 1) [0m
+Completed in 166ms (View: 8, DB: 84) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2011-07-13 20:01:23) [DELETE]
+  Parameters: {"authenticity_token"=>"Y2htQBNeB1iuW0oVb/OcHj3qantzRNxBSQcJRG3/c9A="}
+  [4;36;1mSession Columns (11.4ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSession Load (0.6ms)[0m   [0mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 3) LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSession Update (3.6ms)[0m   [0mUPDATE `sessions` SET `updated_at` = '2011-07-14 03:01:23', `path` = '/tasks' WHERE `id` = 3[0m
+  [4;36;1mSQL (11.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mPerson Columns (13.5ms)[0m   [0mSHOW FIELDS FROM `people`[0m
+  [4;36;1mPerson Load (0.1ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;36;1mTask Columns (17.0ms)[0m   [0;1mSHOW FIELDS FROM `tasks`[0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;35;1mTask Load (7.9ms)[0m   [0mSELECT * FROM `tasks` WHERE (`tasks`.person_id = 1) [0m
+Completed in 109ms (View: 5, DB: 66) | 200 OK [http://localhost/tasks]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2011-07-13 20:01:28) [DELETE]
+  Parameters: {"authenticity_token"=>"Y2htQBNeB1iuW0oVb/OcHj3qantzRNxBSQcJRG3/c9A="}
+  [4;36;1mSession Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSession Load (3.6ms)[0m   [0mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 3) LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (10.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mPerson Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `people`[0m
+  [4;35;1mPerson Load (0.1ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;35;1mTask Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;36;1mTask Load (0.2ms)[0m   [0;1mSELECT * FROM `tasks` WHERE (`tasks`.person_id = 1) [0m
+Completed in 112ms (View: 18, DB: 19) | 200 OK [http://localhost/tasks]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#create (for 127.0.0.1 at 2011-07-13 20:01:39) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"Y2htQBNeB1iuW0oVb/OcHj3qantzRNxBSQcJRG3/c9A=", "task"=>{"name"=>"rakesh", "priority"=>"23"}}
+  [4;35;1mSession Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `sessions`[0m
+  [4;36;1mSession Load (0.4ms)[0m   [0;1mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 3) LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mPerson Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `people`[0m
+  [4;36;1mPerson Load (2.1ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;36;1mTask Columns (4.1ms)[0m   [0;1mSHOW FIELDS FROM `tasks`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mTask Create (0.5ms)[0m   [0;1mINSERT INTO `tasks` (`name`, `created_at`, `updated_at`, `priority`, `person_id`, `finished`) VALUES('rakesh', '2011-07-14 03:01:39', '2011-07-14 03:01:39', 23, 1, NULL)[0m
+  [4;35;1mSQL (16.9ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/tasks
+Completed in 68ms (DB: 28) | 302 Found [http://localhost/tasks]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2011-07-13 20:01:39) [GET]
+  [4;36;1mSession Columns (6.5ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSession Load (0.4ms)[0m   [0mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 3) LIMIT 1[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCOMMIT[0m
+  [4;36;1mPerson Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `people`[0m
+  [4;35;1mPerson Load (0.2ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;35;1mTask Columns (2.9ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;36;1mTask Load (2.8ms)[0m   [0;1mSELECT * FROM `tasks` WHERE (`tasks`.person_id = 1) [0m
+Completed in 58ms (View: 8, DB: 15) | 200 OK [http://localhost/tasks]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#destroy (for 127.0.0.1 at 2011-07-13 20:01:43) [DELETE]
+  Parameters: {"authenticity_token"=>"Y2htQBNeB1iuW0oVb/OcHj3qantzRNxBSQcJRG3/c9A=", "id"=>"1"}
+  [4;35;1mSession Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `sessions`[0m
+  [4;36;1mSession Load (5.1ms)[0m   [0;1mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 3) LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSession Update (8.8ms)[0m   [0;1mUPDATE `sessions` SET `updated_at` = '2011-07-14 03:01:43', `path` = '/tasks/1' WHERE `id` = 3[0m
+  [4;35;1mSQL (2.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mPerson Columns (19.9ms)[0m   [0;1mSHOW FIELDS FROM `people`[0m
+  [4;35;1mPerson Load (0.2ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;35;1mTask Columns (19.9ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+  [4;36;1mTask Load (0.8ms)[0m   [0;1mSELECT * FROM `tasks` WHERE (`tasks`.`id` = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mTask Destroy (0.5ms)[0m   [0;1mDELETE FROM `tasks` WHERE `id` = 1[0m
+  [4;35;1mSQL (2.7ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/tasks
+Completed in 109ms (DB: 63) | 302 Found [http://localhost/tasks/1]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2011-07-13 20:01:43) [GET]
+  [4;36;1mSession Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSession Load (4.0ms)[0m   [0mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 3) LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSession Update (4.1ms)[0m   [0mUPDATE `sessions` SET `updated_at` = '2011-07-14 03:01:43', `path` = '/tasks' WHERE `id` = 3[0m
+  [4;36;1mSQL (4.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mPerson Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `people`[0m
+  [4;36;1mPerson Load (0.1ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;36;1mTask Columns (3.2ms)[0m   [0;1mSHOW FIELDS FROM `tasks`[0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;35;1mTask Load (0.4ms)[0m   [0mSELECT * FROM `tasks` WHERE (`tasks`.person_id = 1) [0m
+Completed in 149ms (View: 5, DB: 20) | 200 OK [http://localhost/tasks]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2011-07-13 20:01:47) [DELETE]
+  Parameters: {"authenticity_token"=>"Y2htQBNeB1iuW0oVb/OcHj3qantzRNxBSQcJRG3/c9A="}
+  [4;36;1mSession Columns (5.2ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSession Load (0.5ms)[0m   [0mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 3) LIMIT 1[0m
+  [4;36;1mSQL (12.8ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCOMMIT[0m
+  [4;36;1mPerson Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `people`[0m
+  [4;35;1mPerson Load (0.2ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;35;1mTask Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;36;1mTask Load (3.7ms)[0m   [0;1mSELECT * FROM `tasks` WHERE (`tasks`.person_id = 1) [0m
+Completed in 113ms (View: 13, DB: 25) | 200 OK [http://localhost/tasks]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2011-07-13 20:02:17) [GET]
+  [4;35;1mSession Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `sessions`[0m
+  [4;36;1mSession Load (0.3ms)[0m   [0;1mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 3) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mPerson Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `people`[0m
+  [4;36;1mPerson Load (0.1ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering tasks/index
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #2 of app/views/tasks/index.rhtml:
+1: <h1> Tasks </h1>
+2: <% form_for @task do |f| -%>
+3: 	<p> 
+4: 		<%= f.label 'Task Name' %>:
+5: 		<%= f.text_field :name %>
+
+    app/views/tasks/index.rhtml:2:in `_run_rhtml_app47views47tasks47index46rhtml'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (134.0ms)
+Rendered rescues/_request_and_response (2.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2011-07-13 20:02:23) [GET]
+  [4;36;1mSession Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSession Load (0.2ms)[0m   [0mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 3) LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mPerson Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `people`[0m
+  [4;35;1mPerson Load (0.1ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;35;1mTask Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;36;1mTask Load (0.2ms)[0m   [0;1mSELECT * FROM `tasks` WHERE (`tasks`.person_id = 1) [0m
+Completed in 37ms (View: 5, DB: 5) | 200 OK [http://localhost/tasks]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2011-07-13 20:02:51) [GET]
+  [4;35;1mSession Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `sessions`[0m
+  [4;36;1mSession Load (0.2ms)[0m   [0;1mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 3) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mPerson Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `people`[0m
+  [4;36;1mPerson Load (0.1ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;36;1mTask Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `tasks`[0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;35;1mTask Load (0.2ms)[0m   [0mSELECT * FROM `tasks` WHERE (`tasks`.person_id = 1) [0m
+Completed in 38ms (View: 6, DB: 4) | 200 OK [http://localhost/tasks]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2011-07-13 20:03:02) [GET]
+  [4;36;1mSession Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSession Load (0.2ms)[0m   [0mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 3) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mPerson Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `people`[0m
+  [4;35;1mPerson Load (0.1ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;35;1mTask Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;36;1mTask Load (0.2ms)[0m   [0;1mSELECT * FROM `tasks` WHERE (`tasks`.person_id = 1) [0m
+Completed in 116ms (View: 8, DB: 5) | 200 OK [http://localhost/tasks]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#create (for 127.0.0.1 at 2011-07-13 20:04:26) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"Y2htQBNeB1iuW0oVb/OcHj3qantzRNxBSQcJRG3/c9A=", "task"=>{"name"=>"Rakesh Interview", "priority"=>"2"}}
+  [4;35;1mSession Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `sessions`[0m
+  [4;36;1mSession Load (0.2ms)[0m   [0;1mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 3) LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mPerson Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `people`[0m
+  [4;36;1mPerson Load (0.1ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;36;1mTask Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `tasks`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mTask Create (0.7ms)[0m   [0;1mINSERT INTO `tasks` (`name`, `created_at`, `updated_at`, `priority`, `person_id`, `finished`) VALUES('Rakesh Interview', '2011-07-14 03:04:26', '2011-07-14 03:04:26', 2, 1, NULL)[0m
+  [4;35;1mSQL (4.6ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/tasks
+Completed in 44ms (DB: 10) | 302 Found [http://localhost/tasks]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2011-07-13 20:04:26) [GET]
+  [4;36;1mSession Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSession Load (0.2ms)[0m   [0mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 3) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCOMMIT[0m
+  [4;36;1mPerson Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `people`[0m
+  [4;35;1mPerson Load (0.2ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;35;1mTask Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;36;1mTask Load (0.5ms)[0m   [0;1mSELECT * FROM `tasks` WHERE (`tasks`.person_id = 1) [0m
+Completed in 49ms (View: 10, DB: 4) | 200 OK [http://localhost/tasks]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#create (for 127.0.0.1 at 2011-07-13 20:07:15) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"Y2htQBNeB1iuW0oVb/OcHj3qantzRNxBSQcJRG3/c9A=", "task"=>{"name"=>"amex", "priority"=>"3"}}
+  [4;35;1mSession Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `sessions`[0m
+  [4;36;1mSession Load (0.3ms)[0m   [0;1mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 3) LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mPerson Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `people`[0m
+  [4;36;1mPerson Load (0.1ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;36;1mTask Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `tasks`[0m
+  [4;35;1mSQL (4.7ms)[0m   [0mBEGIN[0m
+  [4;36;1mTask Create (1.0ms)[0m   [0;1mINSERT INTO `tasks` (`name`, `created_at`, `updated_at`, `priority`, `person_id`, `finished`) VALUES('amex', '2011-07-14 03:07:16', '2011-07-14 03:07:16', 3, 1, NULL)[0m
+  [4;35;1mSQL (12.5ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/tasks
+Completed in 177ms (DB: 23) | 302 Found [http://localhost/tasks]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2011-07-13 20:07:16) [GET]
+  [4;36;1mSession Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSession Load (0.2ms)[0m   [0mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 3) LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCOMMIT[0m
+  [4;36;1mPerson Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `people`[0m
+  [4;35;1mPerson Load (0.1ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;35;1mTask Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;36;1mTask Load (0.4ms)[0m   [0;1mSELECT * FROM `tasks` WHERE (`tasks`.person_id = 1) [0m
+Completed in 41ms (View: 10, DB: 5) | 200 OK [http://localhost/tasks]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#create (for 127.0.0.1 at 2011-07-13 20:07:25) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"Y2htQBNeB1iuW0oVb/OcHj3qantzRNxBSQcJRG3/c9A=", "task"=>{"name"=>"volley vall", "priority"=>"1"}}
+  [4;35;1mSession Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `sessions`[0m
+  [4;36;1mSession Load (0.3ms)[0m   [0;1mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 3) LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mPerson Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `people`[0m
+  [4;36;1mPerson Load (1.9ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;36;1mTask Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `tasks`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mTask Create (0.4ms)[0m   [0;1mINSERT INTO `tasks` (`name`, `created_at`, `updated_at`, `priority`, `person_id`, `finished`) VALUES('volley vall', '2011-07-14 03:07:25', '2011-07-14 03:07:25', 1, 1, NULL)[0m
+  [4;35;1mSQL (30.7ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/tasks
+Completed in 68ms (DB: 38) | 302 Found [http://localhost/tasks]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2011-07-13 20:07:25) [GET]
+  [4;36;1mSession Columns (7.8ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSession Load (0.2ms)[0m   [0mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 3) LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mPerson Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `people`[0m
+  [4;35;1mPerson Load (0.2ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;35;1mTask Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;36;1mTask Load (0.4ms)[0m   [0;1mSELECT * FROM `tasks` WHERE (`tasks`.person_id = 1) [0m
+Completed in 46ms (View: 10, DB: 11) | 200 OK [http://localhost/tasks]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#create (for 127.0.0.1 at 2011-07-13 20:07:36) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"Y2htQBNeB1iuW0oVb/OcHj3qantzRNxBSQcJRG3/c9A=", "task"=>{"name"=>"Golden Temple", "priority"=>"3"}}
+  [4;35;1mSession Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `sessions`[0m
+  [4;36;1mSession Load (0.2ms)[0m   [0;1mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 3) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (3.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mPerson Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `people`[0m
+  [4;36;1mPerson Load (0.1ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;36;1mTask Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `tasks`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mTask Create (0.4ms)[0m   [0;1mINSERT INTO `tasks` (`name`, `created_at`, `updated_at`, `priority`, `person_id`, `finished`) VALUES('Golden Temple', '2011-07-14 03:07:36', '2011-07-14 03:07:36', 3, 1, NULL)[0m
+  [4;35;1mSQL (12.1ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/tasks
+Completed in 51ms (DB: 20) | 302 Found [http://localhost/tasks]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2011-07-13 20:07:36) [GET]
+  [4;36;1mSession Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSession Load (0.2ms)[0m   [0mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 3) LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (2.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mPerson Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `people`[0m
+  [4;35;1mPerson Load (0.1ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;35;1mTask Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;36;1mTask Load (0.4ms)[0m   [0;1mSELECT * FROM `tasks` WHERE (`tasks`.person_id = 1) [0m
+Completed in 39ms (View: 8, DB: 7) | 200 OK [http://localhost/tasks]
+  [4;35;1mSQL (0.4ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#completed (for 127.0.0.1 at 2011-07-13 20:07:40) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mSession Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `sessions`[0m
+  [4;36;1mSession Load (0.2ms)[0m   [0;1mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 3) LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSession Update (0.5ms)[0m   [0;1mUPDATE `sessions` SET `updated_at` = '2011-07-14 03:07:40', `path` = '/tasks/completed/3' WHERE `id` = 3[0m
+  [4;35;1mSQL (3.8ms)[0m   [0mCOMMIT[0m
+  [4;36;1mPerson Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `people`[0m
+  [4;35;1mPerson Load (0.1ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;35;1mTask Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+  [4;36;1mTask Load (0.4ms)[0m   [0;1mSELECT * FROM `tasks` WHERE (`tasks`.`id` = 3 AND (`tasks`.person_id = 1)) [0m
+
+ArgumentError (wrong number of arguments (0 for 1)):
+  app/controllers/tasks_controller.rb:29:in `update_attributes'
+  app/controllers/tasks_controller.rb:29:in `completed'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (127.5ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.4ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2011-07-13 20:09:29) [GET]
+  [4;35;1mSession Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `sessions`[0m
+  [4;36;1mSession Load (0.5ms)[0m   [0;1mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 3) LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSession Update (0.7ms)[0m   [0;1mUPDATE `sessions` SET `updated_at` = '2011-07-14 03:09:29', `path` = '/tasks' WHERE `id` = 3[0m
+  [4;35;1mSQL (7.7ms)[0m   [0mCOMMIT[0m
+  [4;36;1mPerson Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `people`[0m
+  [4;35;1mPerson Load (0.2ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;35;1mTask Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;36;1mTask Load (0.2ms)[0m   [0;1mSELECT * FROM `tasks` WHERE (`tasks`.person_id = 1) [0m
+Completed in 60ms (View: 16, DB: 13) | 200 OK [http://localhost/tasks]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2011-07-13 20:09:31) [GET]
+  [4;35;1mSession Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `sessions`[0m
+  [4;36;1mSession Load (0.4ms)[0m   [0;1mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 3) LIMIT 1[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mPerson Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `people`[0m
+  [4;36;1mPerson Load (0.1ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;36;1mTask Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `tasks`[0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;35;1mTask Load (0.2ms)[0m   [0mSELECT * FROM `tasks` WHERE (`tasks`.person_id = 1) [0m
+Completed in 41ms (View: 9, DB: 5) | 200 OK [http://localhost/tasks]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2011-07-13 20:10:22) [GET]
+  [4;36;1mSession Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSession Load (0.3ms)[0m   [0mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 3) LIMIT 1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mPerson Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `people`[0m
+  [4;35;1mPerson Load (0.1ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;35;1mTask Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;36;1mTask Load (0.2ms)[0m   [0;1mSELECT * FROM `tasks` WHERE (`tasks`.person_id = 1) [0m
+Completed in 121ms (View: 14, DB: 5) | 200 OK [http://localhost/tasks]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#destroy (for 127.0.0.1 at 2011-07-13 20:10:36) [DELETE]
+  Parameters: {"authenticity_token"=>"Y2htQBNeB1iuW0oVb/OcHj3qantzRNxBSQcJRG3/c9A=", "id"=>"5"}
+  [4;35;1mSession Columns (10.6ms)[0m   [0mSHOW FIELDS FROM `sessions`[0m
+  [4;36;1mSession Load (7.7ms)[0m   [0;1mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 3) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSession Update (3.6ms)[0m   [0;1mUPDATE `sessions` SET `updated_at` = '2011-07-14 03:10:36', `path` = '/tasks/5' WHERE `id` = 3[0m
+  [4;35;1mSQL (2.7ms)[0m   [0mCOMMIT[0m
+  [4;36;1mPerson Columns (7.6ms)[0m   [0;1mSHOW FIELDS FROM `people`[0m
+  [4;35;1mPerson Load (0.2ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;35;1mTask Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+  [4;36;1mTask Load (0.5ms)[0m   [0;1mSELECT * FROM `tasks` WHERE (`tasks`.`id` = 5 AND (`tasks`.person_id = 1)) [0m
+  [4;35;1mSQL (4.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mTask Destroy (0.4ms)[0m   [0;1mDELETE FROM `tasks` WHERE `id` = 5[0m
+  [4;35;1mSQL (2.7ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/tasks
+Completed in 109ms (DB: 43) | 302 Found [http://localhost/tasks/5]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2011-07-13 20:10:36) [GET]
+  [4;36;1mSession Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSession Load (0.5ms)[0m   [0mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 3) LIMIT 1[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSession Update (0.4ms)[0m   [0mUPDATE `sessions` SET `updated_at` = '2011-07-14 03:10:36', `path` = '/tasks' WHERE `id` = 3[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mPerson Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `people`[0m
+  [4;36;1mPerson Load (0.1ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;36;1mTask Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `tasks`[0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;35;1mTask Load (0.5ms)[0m   [0mSELECT * FROM `tasks` WHERE (`tasks`.person_id = 1) [0m
+Completed in 49ms (View: 8, DB: 8) | 200 OK [http://localhost/tasks]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2011-07-13 20:11:40) [GET]
+  [4;36;1mSession Columns (7.0ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSession Load (44.3ms)[0m   [0mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 3) LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mPerson Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `people`[0m
+  [4;35;1mPerson Load (2.5ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;35;1mTask Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;36;1mTask Load (0.2ms)[0m   [0;1mSELECT * FROM `tasks` WHERE (`tasks`.person_id = 1) [0m
+Completed in 317ms (View: 204, DB: 57) | 200 OK [http://localhost/tasks]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2011-07-13 20:12:45) [GET]
+  [4;35;1mSession Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `sessions`[0m
+  [4;36;1mSession Load (0.2ms)[0m   [0;1mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 3) LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mPerson Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `people`[0m
+  [4;36;1mPerson Load (0.1ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;36;1mTask Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `tasks`[0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;35;1mTask Load (0.2ms)[0m   [0mSELECT * FROM `tasks` WHERE (`tasks`.person_id = 1) [0m
+Completed in 44ms (View: 12, DB: 4) | 200 OK [http://localhost/tasks]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#completed (for 127.0.0.1 at 2011-07-13 20:13:05) [POST]
+  Parameters: {"authenticity_token"=>"Y2htQBNeB1iuW0oVb/OcHj3qantzRNxBSQcJRG3/c9A=", "id"=>"2"}
+  [4;36;1mSession Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSession Load (0.2ms)[0m   [0mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 3) LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSession Update (0.8ms)[0m   [0mUPDATE `sessions` SET `updated_at` = '2011-07-14 03:13:05', `path` = '/tasks/completed/2' WHERE `id` = 3[0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mPerson Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `people`[0m
+  [4;36;1mPerson Load (0.1ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;36;1mTask Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `tasks`[0m
+  [4;35;1mTask Load (2.1ms)[0m   [0mSELECT * FROM `tasks` WHERE (`tasks`.`id` = 2 AND (`tasks`.person_id = 1)) [0m
+
+ArgumentError (wrong number of arguments (0 for 1)):
+  app/controllers/tasks_controller.rb:29:in `update_attributes'
+  app/controllers/tasks_controller.rb:29:in `completed'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (35.5ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#completed (for 127.0.0.1 at 2011-07-13 20:25:57) [POST]
+  Parameters: {"authenticity_token"=>"Y2htQBNeB1iuW0oVb/OcHj3qantzRNxBSQcJRG3/c9A=", "id"=>"2"}
+  [4;36;1mSession Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSession Load (0.7ms)[0m   [0mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 3) LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mPerson Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `people`[0m
+  [4;35;1mPerson Load (0.1ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;35;1mTask Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+  [4;36;1mTask Load (0.1ms)[0m   [0;1mSELECT * FROM `tasks` WHERE (`tasks`.`id` = 2 AND (`tasks`.person_id = 1)) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mBEGIN[0m
+  [4;36;1mTask Update (0.6ms)[0m   [0;1mUPDATE `tasks` SET `updated_at` = '2011-07-14 03:25:57', `finished` = 1, `priority` = 10000 WHERE `id` = 2[0m
+  [4;35;1mSQL (2.1ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/tasks
+Completed in 61ms (DB: 9) | 302 Found [http://localhost/tasks/completed/2]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2011-07-13 20:25:57) [GET]
+  [4;36;1mSession Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSession Load (1.0ms)[0m   [0mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 3) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSession Update (0.4ms)[0m   [0mUPDATE `sessions` SET `updated_at` = '2011-07-14 03:25:57', `path` = '/tasks' WHERE `id` = 3[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mPerson Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `people`[0m
+  [4;36;1mPerson Load (0.1ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;36;1mTask Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `tasks`[0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;35;1mTask Load (0.4ms)[0m   [0mSELECT * FROM `tasks` WHERE (`tasks`.person_id = 1) [0m
+Completed in 46ms (View: 11, DB: 8) | 200 OK [http://localhost/tasks]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#undo_completed (for 127.0.0.1 at 2011-07-13 20:27:11) [POST]
+  Parameters: {"authenticity_token"=>"Y2htQBNeB1iuW0oVb/OcHj3qantzRNxBSQcJRG3/c9A=", "id"=>"2"}
+  [4;36;1mSession Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSession Load (0.6ms)[0m   [0mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 3) LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSession Update (0.4ms)[0m   [0mUPDATE `sessions` SET `updated_at` = '2011-07-14 03:27:11', `path` = '/tasks/undo_completed/2' WHERE `id` = 3[0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mPerson Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `people`[0m
+  [4;36;1mPerson Load (0.2ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;36;1mTask Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `tasks`[0m
+  [4;35;1mTask Load (0.6ms)[0m   [0mSELECT * FROM `tasks` WHERE (`tasks`.`id` = 2 AND (`tasks`.person_id = 1)) [0m
+
+NoMethodError (undefined method `update_atrributes' for #<Task:0x7fe58fc6e928>):
+  app/controllers/tasks_controller.rb:36:in `undo_completed'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (113.8ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#undo_completed (for 127.0.0.1 at 2011-07-13 20:28:21) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mSession Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSession Load (0.5ms)[0m   [0mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 3) LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mPerson Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `people`[0m
+  [4;35;1mPerson Load (0.2ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;35;1mTask Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+  [4;36;1mTask Load (0.1ms)[0m   [0;1mSELECT * FROM `tasks` WHERE (`tasks`.`id` = 2 AND (`tasks`.person_id = 1)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mTask Update (0.4ms)[0m   [0;1mUPDATE `tasks` SET `updated_at` = '2011-07-14 03:28:22', `finished` = 0, `priority` = 0 WHERE `id` = 2[0m
+  [4;35;1mSQL (6.5ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/tasks
+Completed in 44ms (DB: 12) | 302 Found [http://localhost/tasks/undo_completed/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2011-07-13 20:28:22) [GET]
+  [4;36;1mSession Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSession Load (0.2ms)[0m   [0mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 3) LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSession Update (0.4ms)[0m   [0mUPDATE `sessions` SET `updated_at` = '2011-07-14 03:28:22', `path` = '/tasks' WHERE `id` = 3[0m
+  [4;36;1mSQL (4.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mPerson Columns (6.1ms)[0m   [0mSHOW FIELDS FROM `people`[0m
+  [4;36;1mPerson Load (0.2ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;36;1mTask Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `tasks`[0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;35;1mTask Load (0.5ms)[0m   [0mSELECT * FROM `tasks` WHERE (`tasks`.person_id = 1) [0m
+Completed in 51ms (View: 10, DB: 14) | 200 OK [http://localhost/tasks]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2011-07-13 20:42:38) [GET]
+  [4;36;1mSession Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSession Load (0.7ms)[0m   [0mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 3) LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSession Update (0.8ms)[0m   [0mUPDATE `sessions` SET `updated_at` = '2011-07-14 03:42:38', `path` = '/' WHERE `id` = 3[0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mPerson Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `people`[0m
+  [4;36;1mPerson Load (0.2ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;36;1mTask Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `tasks`[0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;35;1mTask Load (0.9ms)[0m   [0mSELECT * FROM `tasks` WHERE (`tasks`.person_id = 1) ORDER BY finished DESC, priority ASC[0m
+Completed in 89ms (View: 21, DB: 10) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#completed (for 127.0.0.1 at 2011-07-13 20:42:49) [POST]
+  Parameters: {"authenticity_token"=>"Y2htQBNeB1iuW0oVb/OcHj3qantzRNxBSQcJRG3/c9A=", "id"=>"2"}
+  [4;36;1mSession Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSession Load (3.5ms)[0m   [0mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 3) LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSession Update (0.4ms)[0m   [0mUPDATE `sessions` SET `updated_at` = '2011-07-14 03:42:49', `path` = '/tasks/completed/2' WHERE `id` = 3[0m
+  [4;36;1mSQL (72.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mPerson Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `people`[0m
+  [4;36;1mPerson Load (0.2ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;36;1mTask Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `tasks`[0m
+  [4;35;1mTask Load (0.4ms)[0m   [0mSELECT * FROM `tasks` WHERE (`tasks`.`id` = 2 AND (`tasks`.person_id = 1)) ORDER BY finished DESC, priority ASC[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mTask Update (1.7ms)[0m   [0mUPDATE `tasks` SET `updated_at` = '2011-07-14 03:42:49', `finished` = 1, `priority` = 10000 WHERE `id` = 2[0m
+  [4;36;1mSQL (12.5ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/tasks
+Completed in 165ms (DB: 96) | 302 Found [http://localhost/tasks/completed/2]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2011-07-13 20:42:49) [GET]
+  [4;35;1mSession Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `sessions`[0m
+  [4;36;1mSession Load (0.4ms)[0m   [0;1mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 3) LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSession Update (0.5ms)[0m   [0;1mUPDATE `sessions` SET `updated_at` = '2011-07-14 03:42:49', `path` = '/tasks' WHERE `id` = 3[0m
+  [4;35;1mSQL (57.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mPerson Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `people`[0m
+  [4;35;1mPerson Load (0.5ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;35;1mTask Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;36;1mTask Load (0.5ms)[0m   [0;1mSELECT * FROM `tasks` WHERE (`tasks`.person_id = 1) ORDER BY finished DESC, priority ASC[0m
+Completed in 227ms (View: 17, DB: 65) | 200 OK [http://localhost/tasks]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#completed (for 127.0.0.1 at 2011-07-13 20:42:57) [POST]
+  Parameters: {"authenticity_token"=>"Y2htQBNeB1iuW0oVb/OcHj3qantzRNxBSQcJRG3/c9A=", "id"=>"3"}
+  [4;35;1mSession Columns (7.5ms)[0m   [0mSHOW FIELDS FROM `sessions`[0m
+  [4;36;1mSession Load (0.4ms)[0m   [0;1mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 3) LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSession Update (0.5ms)[0m   [0;1mUPDATE `sessions` SET `updated_at` = '2011-07-14 03:42:57', `path` = '/tasks/completed/3' WHERE `id` = 3[0m
+  [4;35;1mSQL (13.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mPerson Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `people`[0m
+  [4;35;1mPerson Load (0.1ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;35;1mTask Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+  [4;36;1mTask Load (0.4ms)[0m   [0;1mSELECT * FROM `tasks` WHERE (`tasks`.`id` = 3 AND (`tasks`.person_id = 1)) ORDER BY finished DESC, priority ASC[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mTask Update (0.4ms)[0m   [0;1mUPDATE `tasks` SET `updated_at` = '2011-07-14 03:42:57', `finished` = 1, `priority` = 10000 WHERE `id` = 3[0m
+  [4;35;1mSQL (11.9ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/tasks
+Completed in 81ms (DB: 38) | 302 Found [http://localhost/tasks/completed/3]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2011-07-13 20:42:57) [GET]
+  [4;36;1mSession Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSession Load (0.5ms)[0m   [0mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 3) LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSession Update (0.4ms)[0m   [0mUPDATE `sessions` SET `updated_at` = '2011-07-14 03:42:57', `path` = '/tasks' WHERE `id` = 3[0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mPerson Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `people`[0m
+  [4;36;1mPerson Load (0.1ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;36;1mTask Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `tasks`[0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;35;1mTask Load (0.5ms)[0m   [0mSELECT * FROM `tasks` WHERE (`tasks`.person_id = 1) ORDER BY finished DESC, priority ASC[0m
+Completed in 46ms (View: 10, DB: 9) | 200 OK [http://localhost/tasks]
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#undo_completed (for 127.0.0.1 at 2011-07-13 20:43:34) [POST]
+  Parameters: {"authenticity_token"=>"Y2htQBNeB1iuW0oVb/OcHj3qantzRNxBSQcJRG3/c9A=", "id"=>"3"}
+  [4;36;1mSession Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSession Load (2.6ms)[0m   [0mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 3) LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSession Update (0.4ms)[0m   [0mUPDATE `sessions` SET `updated_at` = '2011-07-14 03:43:34', `path` = '/tasks/undo_completed/3' WHERE `id` = 3[0m
+  [4;36;1mSQL (3.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mPerson Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `people`[0m
+  [4;36;1mPerson Load (0.2ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;36;1mTask Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `tasks`[0m
+  [4;35;1mTask Load (0.4ms)[0m   [0mSELECT * FROM `tasks` WHERE (`tasks`.`id` = 3 AND (`tasks`.person_id = 1)) ORDER BY finished DESC, priority ASC[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mTask Update (0.5ms)[0m   [0mUPDATE `tasks` SET `updated_at` = '2011-07-14 03:43:34', `finished` = 0, `priority` = 0 WHERE `id` = 3[0m
+  [4;36;1mSQL (4.7ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/tasks
+Completed in 215ms (DB: 19) | 302 Found [http://localhost/tasks/undo_completed/3]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2011-07-13 20:43:34) [GET]
+  [4;35;1mSession Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `sessions`[0m
+  [4;36;1mSession Load (1.0ms)[0m   [0;1mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 3) LIMIT 1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mBEGIN[0m
+  [4;36;1mSession Update (0.4ms)[0m   [0;1mUPDATE `sessions` SET `updated_at` = '2011-07-14 03:43:34', `path` = '/tasks' WHERE `id` = 3[0m
+  [4;35;1mSQL (3.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mPerson Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `people`[0m
+  [4;35;1mPerson Load (0.5ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;35;1mTask Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;36;1mTask Load (0.7ms)[0m   [0;1mSELECT * FROM `tasks` WHERE (`tasks`.person_id = 1) ORDER BY finished DESC, priority ASC[0m
+Completed in 64ms (View: 10, DB: 10) | 200 OK [http://localhost/tasks]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#completed (for 127.0.0.1 at 2011-07-13 20:43:48) [POST]
+  Parameters: {"authenticity_token"=>"Y2htQBNeB1iuW0oVb/OcHj3qantzRNxBSQcJRG3/c9A=", "id"=>"4"}
+  [4;35;1mSession Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `sessions`[0m
+  [4;36;1mSession Load (0.6ms)[0m   [0;1mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 3) LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSession Update (0.5ms)[0m   [0;1mUPDATE `sessions` SET `updated_at` = '2011-07-14 03:43:48', `path` = '/tasks/completed/4' WHERE `id` = 3[0m
+  [4;35;1mSQL (2.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mPerson Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `people`[0m
+  [4;35;1mPerson Load (2.0ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;35;1mTask Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+  [4;36;1mTask Load (0.4ms)[0m   [0;1mSELECT * FROM `tasks` WHERE (`tasks`.`id` = 4 AND (`tasks`.person_id = 1)) ORDER BY finished DESC, priority ASC[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mTask Update (0.4ms)[0m   [0;1mUPDATE `tasks` SET `updated_at` = '2011-07-14 03:43:48', `finished` = 1, `priority` = 10000 WHERE `id` = 4[0m
+  [4;35;1mSQL (2.3ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/tasks
+Completed in 50ms (DB: 12) | 302 Found [http://localhost/tasks/completed/4]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2011-07-13 20:43:48) [GET]
+  [4;36;1mSession Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSession Load (0.5ms)[0m   [0mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 3) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSession Update (0.4ms)[0m   [0mUPDATE `sessions` SET `updated_at` = '2011-07-14 03:43:48', `path` = '/tasks' WHERE `id` = 3[0m
+  [4;36;1mSQL (3.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mPerson Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `people`[0m
+  [4;36;1mPerson Load (0.1ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;36;1mTask Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `tasks`[0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;35;1mTask Load (0.5ms)[0m   [0mSELECT * FROM `tasks` WHERE (`tasks`.person_id = 1) ORDER BY finished DESC, priority ASC[0m
+Completed in 133ms (View: 12, DB: 9) | 200 OK [http://localhost/tasks]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#undo_completed (for 127.0.0.1 at 2011-07-13 20:43:52) [POST]
+  Parameters: {"authenticity_token"=>"Y2htQBNeB1iuW0oVb/OcHj3qantzRNxBSQcJRG3/c9A=", "id"=>"4"}
+  [4;36;1mSession Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSession Load (0.6ms)[0m   [0mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 3) LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSession Update (0.5ms)[0m   [0mUPDATE `sessions` SET `updated_at` = '2011-07-14 03:43:52', `path` = '/tasks/undo_completed/4' WHERE `id` = 3[0m
+  [4;36;1mSQL (13.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mPerson Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `people`[0m
+  [4;36;1mPerson Load (0.1ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;36;1mTask Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `tasks`[0m
+  [4;35;1mTask Load (0.8ms)[0m   [0mSELECT * FROM `tasks` WHERE (`tasks`.`id` = 4 AND (`tasks`.person_id = 1)) ORDER BY finished DESC, priority ASC[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mTask Update (0.5ms)[0m   [0mUPDATE `tasks` SET `updated_at` = '2011-07-14 03:43:52', `finished` = 0, `priority` = 0 WHERE `id` = 4[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/tasks
+Completed in 59ms (DB: 22) | 302 Found [http://localhost/tasks/undo_completed/4]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2011-07-13 20:43:52) [GET]
+  [4;35;1mSession Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `sessions`[0m
+  [4;36;1mSession Load (0.5ms)[0m   [0;1mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 3) LIMIT 1[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mSession Update (0.5ms)[0m   [0;1mUPDATE `sessions` SET `updated_at` = '2011-07-14 03:43:52', `path` = '/tasks' WHERE `id` = 3[0m
+  [4;35;1mSQL (57.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mPerson Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `people`[0m
+  [4;35;1mPerson Load (0.1ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;35;1mTask Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;36;1mTask Load (0.5ms)[0m   [0;1mSELECT * FROM `tasks` WHERE (`tasks`.person_id = 1) ORDER BY finished DESC, priority ASC[0m
+Completed in 117ms (View: 13, DB: 63) | 200 OK [http://localhost/tasks]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2011-07-13 20:44:46) [GET]
+  [4;36;1mSession Columns (35.6ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSession Load (0.5ms)[0m   [0mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 3) LIMIT 1[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCOMMIT[0m
+  [4;36;1mPerson Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `people`[0m
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;35;1mTask Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;36;1mTask Load (0.6ms)[0m   [0;1mSELECT * FROM `tasks` WHERE (`tasks`.person_id = 1) ORDER BY finished ASC, priority ASC[0m
+Completed in 153ms (View: 22, DB: 41) | 200 OK [http://localhost/tasks]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#completed (for 127.0.0.1 at 2011-07-13 20:44:55) [POST]
+  Parameters: {"authenticity_token"=>"Y2htQBNeB1iuW0oVb/OcHj3qantzRNxBSQcJRG3/c9A=", "id"=>"4"}
+  [4;35;1mSession Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `sessions`[0m
+  [4;36;1mSession Load (0.2ms)[0m   [0;1mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 3) LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mSession Update (5.7ms)[0m   [0;1mUPDATE `sessions` SET `updated_at` = '2011-07-14 03:44:55', `path` = '/tasks/completed/4' WHERE `id` = 3[0m
+  [4;35;1mSQL (5.2ms)[0m   [0mCOMMIT[0m
+  [4;36;1mPerson Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `people`[0m
+  [4;35;1mPerson Load (0.5ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;35;1mTask Columns (3.2ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+  [4;36;1mTask Load (0.6ms)[0m   [0;1mSELECT * FROM `tasks` WHERE (`tasks`.`id` = 4 AND (`tasks`.person_id = 1)) ORDER BY finished ASC, priority ASC[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mTask Update (0.4ms)[0m   [0;1mUPDATE `tasks` SET `updated_at` = '2011-07-14 03:44:55', `finished` = 1, `priority` = 10000 WHERE `id` = 4[0m
+  [4;35;1mSQL (2.6ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/tasks
+Completed in 56ms (DB: 21) | 302 Found [http://localhost/tasks/completed/4]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2011-07-13 20:44:55) [GET]
+  [4;36;1mSession Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSession Load (0.5ms)[0m   [0mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 3) LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSession Update (0.4ms)[0m   [0mUPDATE `sessions` SET `updated_at` = '2011-07-14 03:44:55', `path` = '/tasks' WHERE `id` = 3[0m
+  [4;36;1mSQL (47.2ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mPerson Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `people`[0m
+  [4;36;1mPerson Load (0.1ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;36;1mTask Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `tasks`[0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;35;1mTask Load (0.5ms)[0m   [0mSELECT * FROM `tasks` WHERE (`tasks`.person_id = 1) ORDER BY finished ASC, priority ASC[0m
+Completed in 194ms (View: 11, DB: 53) | 200 OK [http://localhost/tasks]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2011-07-13 20:45:39) [DELETE]
+  Parameters: {"authenticity_token"=>"Y2htQBNeB1iuW0oVb/OcHj3qantzRNxBSQcJRG3/c9A=", "id"=>"3"}
+  [4;36;1mSession Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSession Load (0.6ms)[0m   [0mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 3) LIMIT 1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSession Update (0.4ms)[0m   [0mUPDATE `sessions` SET `updated_at` = '2011-07-14 03:45:39', `path` = '/sessions/3' WHERE `id` = 3[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mPerson Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `people`[0m
+  [4;36;1mPerson Load (0.1ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;35;1mSession Load (0.4ms)[0m   [0mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 3) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSession Destroy (0.3ms)[0m   [0mDELETE FROM `sessions` WHERE `id` = 3[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed in 36ms (DB: 10) | 302 Found [http://localhost/sessions/3]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2011-07-13 20:45:39) [GET]
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as [:ensure_login] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2011-07-13 20:45:39) [GET]
+  [4;35;1mSession Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `sessions`[0m
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 20ms (View: 12, DB: 1) | 200 OK [http://localhost/sessions/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PeopleController#new (for 127.0.0.1 at 2011-07-13 20:45:43) [GET]
+  [4;36;1mPerson Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `people`[0m
+Rendering template within layouts/application
+Rendering people/new
+Rendered people/_form (81.0ms)
+Completed in 104ms (View: 93, DB: 2) | 200 OK [http://localhost/people/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PeopleController#create (for 127.0.0.1 at 2011-07-13 20:45:51) [POST]
+  Parameters: {"person"=>{"name"=>"Rakesh", "password_confirmation"=>"jhu123", "password"=>"jhu123"}, "commit"=>"Submit", "authenticity_token"=>"Y2htQBNeB1iuW0oVb/OcHj3qantzRNxBSQcJRG3/c9A="}
+  [4;35;1mPerson Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `people`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPerson Exists (0.8ms)[0m   [0mSELECT `people`.id FROM `people` WHERE (`people`.`name` = BINARY 'Rakesh') LIMIT 1[0m
+  [4;36;1mPerson Create (0.4ms)[0m   [0;1mINSERT INTO `people` (`name`, `salt`, `encrypted_password`, `created_at`, `updated_at`) VALUES('rakesh', 'hhyjabNg6TZD', '743382ddc0a726da5fbb9cc9bb019b245db48dad3faf1507758e015ed0ec0b35', '2011-07-14 03:45:51', '2011-07-14 03:45:51')[0m
+  [4;35;1mSQL (2.2ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSession Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSession Create (0.6ms)[0m   [0;1mINSERT INTO `sessions` (`created_at`, `updated_at`, `person_id`, `path`, `ip_address`) VALUES('2011-07-14 03:45:51', '2011-07-14 03:45:51', 2, NULL, NULL)[0m
+  [4;35;1mSQL (4.2ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed in 53ms (DB: 11) | 302 Found [http://localhost/people]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2011-07-13 20:45:52) [GET]
+  [4;36;1mSession Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSession Load (0.5ms)[0m   [0mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 4) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSession Update (0.6ms)[0m   [0mUPDATE `sessions` SET `updated_at` = '2011-07-14 03:45:52', `ip_address` = '127.0.0.1', `path` = '/' WHERE `id` = 4[0m
+  [4;36;1mSQL (2.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mPerson Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `people`[0m
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 2) [0m
+  [4;36;1mTask Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `tasks`[0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;35;1mTask Load (0.6ms)[0m   [0mSELECT * FROM `tasks` WHERE (`tasks`.person_id = 2) ORDER BY finished ASC, priority ASC[0m
+Completed in 44ms (View: 6, DB: 8) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#create (for 127.0.0.1 at 2011-07-13 20:45:59) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"Y2htQBNeB1iuW0oVb/OcHj3qantzRNxBSQcJRG3/c9A=", "task"=>{"name"=>"", "priority"=>""}}
+  [4;36;1mSession Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSession Load (0.5ms)[0m   [0mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 4) LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSession Update (1.1ms)[0m   [0mUPDATE `sessions` SET `updated_at` = '2011-07-14 03:46:00', `path` = '/tasks' WHERE `id` = 4[0m
+  [4;36;1mSQL (5.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mPerson Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `people`[0m
+  [4;36;1mPerson Load (0.1ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 2) [0m
+  [4;36;1mTask Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `tasks`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;35;1mTask Load (2.1ms)[0m   [0mSELECT * FROM `tasks` WHERE (`tasks`.person_id = 2) ORDER BY finished ASC, priority ASC[0m
+Completed in 53ms (View: 5, DB: 14) | 200 OK [http://localhost/tasks]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2011-07-13 20:46:13) [DELETE]
+  Parameters: {"authenticity_token"=>"Y2htQBNeB1iuW0oVb/OcHj3qantzRNxBSQcJRG3/c9A="}
+  [4;36;1mSession Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSession Load (0.5ms)[0m   [0mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 4) LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mPerson Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `people`[0m
+  [4;35;1mPerson Load (0.2ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 2) [0m
+  [4;35;1mTask Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;36;1mTask Load (2.5ms)[0m   [0;1mSELECT * FROM `tasks` WHERE (`tasks`.person_id = 2) ORDER BY finished ASC, priority ASC[0m
+Completed in 49ms (View: 7, DB: 7) | 200 OK [http://localhost/tasks]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#create (for 127.0.0.1 at 2011-07-13 20:46:35) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"Y2htQBNeB1iuW0oVb/OcHj3qantzRNxBSQcJRG3/c9A=", "task"=>{"name"=>"", "priority"=>""}}
+  [4;35;1mSession Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `sessions`[0m
+  [4;36;1mSession Load (0.2ms)[0m   [0;1mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 4) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mPerson Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `people`[0m
+  [4;36;1mPerson Load (0.1ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 2) [0m
+  [4;36;1mTask Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `tasks`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mROLLBACK[0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;35;1mTask Load (0.7ms)[0m   [0mSELECT * FROM `tasks` WHERE (`tasks`.person_id = 2) ORDER BY finished ASC, priority ASC[0m
+Completed in 47ms (View: 5, DB: 5) | 200 OK [http://localhost/tasks]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2011-07-13 20:46:46) [GET]
+  [4;36;1mSession Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSession Load (0.2ms)[0m   [0mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 4) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (2.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mPerson Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `people`[0m
+  [4;35;1mPerson Load (0.1ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 2) [0m
+  [4;35;1mTask Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;36;1mTask Load (0.2ms)[0m   [0;1mSELECT * FROM `tasks` WHERE (`tasks`.person_id = 2) ORDER BY finished ASC, priority ASC[0m
+Completed in 41ms (View: 8, DB: 7) | 200 OK [http://localhost/tasks]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2011-07-13 20:49:16) [DELETE]
+  Parameters: {"authenticity_token"=>"Y2htQBNeB1iuW0oVb/OcHj3qantzRNxBSQcJRG3/c9A=", "id"=>"4"}
+  [4;35;1mSession Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `sessions`[0m
+  [4;36;1mSession Load (0.3ms)[0m   [0;1mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 4) LIMIT 1[0m
+  [4;35;1mSQL (2.5ms)[0m   [0mBEGIN[0m
+  [4;36;1mSession Update (0.5ms)[0m   [0;1mUPDATE `sessions` SET `updated_at` = '2011-07-14 03:49:16', `path` = '/sessions/4' WHERE `id` = 4[0m
+  [4;35;1mSQL (2.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mPerson Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `people`[0m
+  [4;35;1mPerson Load (0.2ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 2) [0m
+  [4;36;1mSession Load (0.5ms)[0m   [0;1mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 4) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSession Destroy (0.5ms)[0m   [0;1mDELETE FROM `sessions` WHERE `id` = 4[0m
+  [4;35;1mSQL (4.9ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed in 117ms (DB: 14) | 302 Found [http://localhost/sessions/4]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2011-07-13 20:49:16) [GET]
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as [:ensure_login] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2011-07-13 20:49:16) [GET]
+  [4;36;1mSession Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 12ms (View: 4, DB: 1) | 200 OK [http://localhost/sessions/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2011-07-13 20:49:59) [GET]
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as [:ensure_login] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2011-07-13 20:50:00) [GET]
+  [4;35;1mSession Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `sessions`[0m
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 28ms (View: 12, DB: 1) | 200 OK [http://localhost/sessions/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2011-07-13 20:50:10) [GET]
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as [:ensure_login] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2011-07-13 20:50:10) [GET]
+  [4;36;1mSession Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 15ms (View: 4, DB: 2) | 200 OK [http://localhost/sessions/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2011-07-13 20:50:14) [GET]
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as [:ensure_login] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2011-07-13 20:50:14) [GET]
+  [4;35;1mSession Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `sessions`[0m
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 21ms (View: 13, DB: 1) | 200 OK [http://localhost/sessions/new]
